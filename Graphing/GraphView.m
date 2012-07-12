@@ -2,17 +2,13 @@
 //  GraphView.m
 //  Graphing
 //
-//  Created by 式正 鍋田 on 12/07/12.
-//  Copyright (c) 2012年 Norimasa Nabeta. All rights reserved.
+//  Created by Norimasa Nabeta on 12/07/12.
+//  Copyright (c) 2012 Norimasa Nabeta. All rights reserved.
 //
-#import <CoreGraphics/CoreGraphics.h>
-
 #import "GraphView.h"
 #import "AxesDrawer.h"
 @implementation GraphView
 @synthesize scale=_scale;
-//@synthesize basePoint=_basePoint;
-
 @synthesize offsetx=_offsetx;
 @synthesize offsety=_offsety;
 
@@ -44,7 +40,7 @@
 {
     if (offsetx != _offsetx) {
         _offsetx = offsetx;
-        [self setNeedsDisplay]; // any time our scale changes, call for redraw
+        [self setNeedsDisplay];
     }
 }
 - (CGFloat) offsety
@@ -58,32 +54,15 @@
 {
     if (offsety != _offsety) {
         _offsety = offsety;
-        [self setNeedsDisplay]; // any time our scale changes, call for redraw
+        [self setNeedsDisplay];
     }
 }
-
-/*
-- (CGPoint) basePoint
-{
-    if(! _basePoint){
-        _basePoint = CGPointMake(0, 0);
-    }
-    return _basePoint;
-}
-- (void) setBasePoint:(CGPoint)basePoint
-{
-    if((basePoint.x != _basePoint.x) && (basePoint.y != basePoint.y)){
-        _basePoint=basePoint;
-        [self setNeedsDisplay]; // any time our scale changes, call for redraw
-    }    
-}
-*/
 - (void)pinch:(UIPinchGestureRecognizer *)gesture
 {
     if ((gesture.state == UIGestureRecognizerStateChanged) ||
         (gesture.state == UIGestureRecognizerStateEnded)) {
         self.scale *= gesture.scale; // adjust our scale
-        gesture.scale = 1;           // reset gestures scale to 1 (so future changes are incremental, not cumulative)
+        gesture.scale = 1;
     }
 }
 
@@ -92,9 +71,6 @@
     if ((gesture.state == UIGestureRecognizerStateChanged) ||
         (gesture.state == UIGestureRecognizerStateEnded)) {
         CGPoint translation = [gesture translationInView:self];
-        //self.basePoint = CGPointMake((self.basePoint.x-translation.x / 2),
-        //                             (self.basePoint.y -translation.y/2));
-
         // NSLog(@"%g, %g", translation.x, translation.y);
         self.offsetx -= -translation.x / 2;
         self.offsety -= -translation.y / 2;
@@ -124,10 +100,6 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-*/
  - (void)drawRect:(CGRect)rect
 {
     // Drawing code

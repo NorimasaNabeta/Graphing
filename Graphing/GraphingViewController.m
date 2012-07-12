@@ -13,6 +13,18 @@
 @end
 
 @implementation GraphingViewController
+@synthesize graphView=_graphView;
+
+
+-(void) setGraphView:(GraphView *)graphView
+{
+    _graphView=graphView;
+    // enable pinch gestures for scaling
+    [self.graphView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self.graphView action:@selector(pinch:)]];
+    // enable pan gestures for moving graph
+    [self.graphView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self.graphView action:@selector(pan:)]]; 
+
+}
 
 - (void)viewDidLoad
 {
@@ -22,6 +34,7 @@
 
 - (void)viewDidUnload
 {
+    [self setGraphView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

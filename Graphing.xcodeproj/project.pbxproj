@@ -15,6 +15,8 @@
 		F28736AE15AE7B0E008EC35D /* GraphingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736AD15AE7B0E008EC35D /* GraphingAppDelegate.m */; };
 		F28736B115AE7B0E008EC35D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28736AF15AE7B0E008EC35D /* MainStoryboard.storyboard */; };
 		F28736B415AE7B0E008EC35D /* GraphingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736B315AE7B0E008EC35D /* GraphingViewController.m */; };
+		F28736BC15AE7BBF008EC35D /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736BB15AE7BBF008EC35D /* AxesDrawer.m */; };
+		F28736BF15AE7CA2008EC35D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736BE15AE7CA2008EC35D /* GraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +24,19 @@
 		F287369D15AE7B0E008EC35D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F287369F15AE7B0E008EC35D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F28736A115AE7B0E008EC35D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F28736A515AE7B0E008EC35D /* Graphing-Info.plist */ = {isa = PBXFileReference; path = "Graphing-Info.plist"; sourceTree = "<group>"; };
+		F28736A515AE7B0E008EC35D /* Graphing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Graphing-Info.plist"; sourceTree = "<group>"; };
 		F28736A715AE7B0E008EC35D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F28736A915AE7B0E008EC35D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F28736AB15AE7B0E008EC35D /* Graphing-Prefix.pch */ = {isa = PBXFileReference; path = "Graphing-Prefix.pch"; sourceTree = "<group>"; };
-		F28736AC15AE7B0E008EC35D /* GraphingAppDelegate.h */ = {isa = PBXFileReference; path = GraphingAppDelegate.h; sourceTree = "<group>"; };
+		F28736AB15AE7B0E008EC35D /* Graphing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graphing-Prefix.pch"; sourceTree = "<group>"; };
+		F28736AC15AE7B0E008EC35D /* GraphingAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphingAppDelegate.h; sourceTree = "<group>"; };
 		F28736AD15AE7B0E008EC35D /* GraphingAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphingAppDelegate.m; sourceTree = "<group>"; };
 		F28736B015AE7B0E008EC35D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F28736B215AE7B0E008EC35D /* GraphingViewController.h */ = {isa = PBXFileReference; path = GraphingViewController.h; sourceTree = "<group>"; };
+		F28736B215AE7B0E008EC35D /* GraphingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphingViewController.h; sourceTree = "<group>"; };
 		F28736B315AE7B0E008EC35D /* GraphingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphingViewController.m; sourceTree = "<group>"; };
+		F28736BA15AE7BBF008EC35D /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
+		F28736BB15AE7BBF008EC35D /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
+		F28736BD15AE7CA2008EC35D /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		F28736BE15AE7CA2008EC35D /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +85,11 @@
 			children = (
 				F28736AC15AE7B0E008EC35D /* GraphingAppDelegate.h */,
 				F28736AD15AE7B0E008EC35D /* GraphingAppDelegate.m */,
+				F28736BA15AE7BBF008EC35D /* AxesDrawer.h */,
+				F28736BB15AE7BBF008EC35D /* AxesDrawer.m */,
 				F28736AF15AE7B0E008EC35D /* MainStoryboard.storyboard */,
+				F28736BD15AE7CA2008EC35D /* GraphView.h */,
+				F28736BE15AE7CA2008EC35D /* GraphView.m */,
 				F28736B215AE7B0E008EC35D /* GraphingViewController.h */,
 				F28736B315AE7B0E008EC35D /* GraphingViewController.m */,
 				F28736A415AE7B0E008EC35D /* Supporting Files */,
@@ -165,6 +175,8 @@
 				F28736AA15AE7B0E008EC35D /* main.m in Sources */,
 				F28736AE15AE7B0E008EC35D /* GraphingAppDelegate.m in Sources */,
 				F28736B415AE7B0E008EC35D /* GraphingViewController.m in Sources */,
+				F28736BC15AE7BBF008EC35D /* AxesDrawer.m in Sources */,
+				F28736BF15AE7CA2008EC35D /* GraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

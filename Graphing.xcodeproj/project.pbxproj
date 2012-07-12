@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F287369E15AE7B0E008EC35D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F287369D15AE7B0E008EC35D /* UIKit.framework */; };
+		F28736A015AE7B0E008EC35D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F287369F15AE7B0E008EC35D /* Foundation.framework */; };
+		F28736A215AE7B0E008EC35D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28736A115AE7B0E008EC35D /* CoreGraphics.framework */; };
+		F28736A815AE7B0E008EC35D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F28736A615AE7B0E008EC35D /* InfoPlist.strings */; };
+		F28736AA15AE7B0E008EC35D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736A915AE7B0E008EC35D /* main.m */; };
+		F28736AE15AE7B0E008EC35D /* GraphingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736AD15AE7B0E008EC35D /* GraphingAppDelegate.m */; };
+		F28736B115AE7B0E008EC35D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28736AF15AE7B0E008EC35D /* MainStoryboard.storyboard */; };
+		F28736B415AE7B0E008EC35D /* GraphingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736B315AE7B0E008EC35D /* GraphingViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F287369915AE7B0E008EC35D /* Graphing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graphing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F287369D15AE7B0E008EC35D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F287369F15AE7B0E008EC35D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F28736A115AE7B0E008EC35D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F28736A515AE7B0E008EC35D /* Graphing-Info.plist */ = {isa = PBXFileReference; path = "Graphing-Info.plist"; sourceTree = "<group>"; };
+		F28736A715AE7B0E008EC35D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F28736A915AE7B0E008EC35D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F28736AB15AE7B0E008EC35D /* Graphing-Prefix.pch */ = {isa = PBXFileReference; path = "Graphing-Prefix.pch"; sourceTree = "<group>"; };
+		F28736AC15AE7B0E008EC35D /* GraphingAppDelegate.h */ = {isa = PBXFileReference; path = GraphingAppDelegate.h; sourceTree = "<group>"; };
+		F28736AD15AE7B0E008EC35D /* GraphingAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphingAppDelegate.m; sourceTree = "<group>"; };
+		F28736B015AE7B0E008EC35D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F28736B215AE7B0E008EC35D /* GraphingViewController.h */ = {isa = PBXFileReference; path = GraphingViewController.h; sourceTree = "<group>"; };
+		F28736B315AE7B0E008EC35D /* GraphingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphingViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F287369615AE7B0E008EC35D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F287369E15AE7B0E008EC35D /* UIKit.framework in Frameworks */,
+				F28736A015AE7B0E008EC35D /* Foundation.framework in Frameworks */,
+				F28736A215AE7B0E008EC35D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F287368E15AE7B0E008EC35D = {
+			isa = PBXGroup;
+			children = (
+				F28736A315AE7B0E008EC35D /* Graphing */,
+				F287369C15AE7B0E008EC35D /* Frameworks */,
+				F287369A15AE7B0E008EC35D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F287369A15AE7B0E008EC35D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F287369915AE7B0E008EC35D /* Graphing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F287369C15AE7B0E008EC35D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F287369D15AE7B0E008EC35D /* UIKit.framework */,
+				F287369F15AE7B0E008EC35D /* Foundation.framework */,
+				F28736A115AE7B0E008EC35D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F28736A315AE7B0E008EC35D /* Graphing */ = {
+			isa = PBXGroup;
+			children = (
+				F28736AC15AE7B0E008EC35D /* GraphingAppDelegate.h */,
+				F28736AD15AE7B0E008EC35D /* GraphingAppDelegate.m */,
+				F28736AF15AE7B0E008EC35D /* MainStoryboard.storyboard */,
+				F28736B215AE7B0E008EC35D /* GraphingViewController.h */,
+				F28736B315AE7B0E008EC35D /* GraphingViewController.m */,
+				F28736A415AE7B0E008EC35D /* Supporting Files */,
+			);
+			path = Graphing;
+			sourceTree = "<group>";
+		};
+		F28736A415AE7B0E008EC35D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F28736A515AE7B0E008EC35D /* Graphing-Info.plist */,
+				F28736A615AE7B0E008EC35D /* InfoPlist.strings */,
+				F28736A915AE7B0E008EC35D /* main.m */,
+				F28736AB15AE7B0E008EC35D /* Graphing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F287369815AE7B0E008EC35D /* Graphing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F28736B715AE7B0E008EC35D /* Build configuration list for PBXNativeTarget "Graphing" */;
+			buildPhases = (
+				F287369515AE7B0E008EC35D /* Sources */,
+				F287369615AE7B0E008EC35D /* Frameworks */,
+				F287369715AE7B0E008EC35D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Graphing;
+			productName = Graphing;
+			productReference = F287369915AE7B0E008EC35D /* Graphing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F287369015AE7B0E008EC35D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Graphing;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Norimasa Nabeta";
+			};
+			buildConfigurationList = F287369315AE7B0E008EC35D /* Build configuration list for PBXProject "Graphing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F287368E15AE7B0E008EC35D;
+			productRefGroup = F287369A15AE7B0E008EC35D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F287369815AE7B0E008EC35D /* Graphing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F287369715AE7B0E008EC35D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28736A815AE7B0E008EC35D /* InfoPlist.strings in Resources */,
+				F28736B115AE7B0E008EC35D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F287369515AE7B0E008EC35D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28736AA15AE7B0E008EC35D /* main.m in Sources */,
+				F28736AE15AE7B0E008EC35D /* GraphingAppDelegate.m in Sources */,
+				F28736B415AE7B0E008EC35D /* GraphingViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F28736A615AE7B0E008EC35D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F28736A715AE7B0E008EC35D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F28736AF15AE7B0E008EC35D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F28736B015AE7B0E008EC35D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F28736B515AE7B0E008EC35D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F28736B615AE7B0E008EC35D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F28736B815AE7B0E008EC35D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Graphing/Graphing-Prefix.pch";
+				INFOPLIST_FILE = "Graphing/Graphing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F28736B915AE7B0E008EC35D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Graphing/Graphing-Prefix.pch";
+				INFOPLIST_FILE = "Graphing/Graphing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F287369315AE7B0E008EC35D /* Build configuration list for PBXProject "Graphing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F28736B515AE7B0E008EC35D /* Debug */,
+				F28736B615AE7B0E008EC35D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F28736B715AE7B0E008EC35D /* Build configuration list for PBXNativeTarget "Graphing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F28736B815AE7B0E008EC35D /* Debug */,
+				F28736B915AE7B0E008EC35D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F287369015AE7B0E008EC35D /* Project object */;
+}

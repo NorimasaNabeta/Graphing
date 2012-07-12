@@ -12,8 +12,7 @@
 
 @synthesize offsetx=_offsetx;
 @synthesize offsety=_offsety;
-@synthesize midPointx=_midPointx;
-@synthesize midPointy=_midPointy;
+@synthesize midPoint=_midPoint;
 
 #define DEFAULT_SCALE 0.90
 
@@ -39,8 +38,7 @@
         (gesture.state == UIGestureRecognizerStateEnded)) {
         CGPoint tapPoint = [gesture locationInView:gesture.view];
         //NSLog(@"%g, %g", tapPoint.x, tapPoint.y);
-        self.midPointx=tapPoint.x;
-        self.midPointy=tapPoint.y;
+        self.midPoint=tapPoint;
         [self setNeedsDisplay];
     }
 }
@@ -73,8 +71,8 @@
 - (void)setup
 {
     self.contentMode = UIViewContentModeRedraw; // if our bounds changes, redraw ourselves
-    self.midPointx = self.bounds.origin.x + self.bounds.size.width/2;
-    self.midPointy = self.bounds.origin.y + self.bounds.size.height/2;
+    self.midPoint = CGPointMake((self.bounds.origin.x + self.bounds.size.width/2),
+                                (self.bounds.origin.y + self.bounds.size.height/2));
 }
 
 - (void)awakeFromNib
@@ -95,8 +93,6 @@
  - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    CGPoint midPoint=CGPointMake(self.midPointx, self.midPointy);
-
     CGRect baseRect = self.bounds;
     baseRect.origin.x += self.offsetx;
     baseRect.origin.y += self.offsety;
@@ -108,7 +104,7 @@
     // CGContextFillPath(context);    
     CGContextStrokePath(context); 
     
-    [AxesDrawer drawAxesInRect:baseRect originAtPoint:midPoint scale:self.scale];
+    [AxesDrawer drawAxesInRect:baseRect originAtPoint:self.midPoint scale:self.scale];
 
 }
 

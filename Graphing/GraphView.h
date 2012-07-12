@@ -16,11 +16,14 @@
 @interface GraphView : UIView
 
 @property (nonatomic) CGFloat scale;
+
+//
+// http://stackoverflow.com/questions/2971842/cgrect-var-as-property-value
+// CGRect is a struct, not an NSObject.
+//
 @property (nonatomic) CGFloat offsetx;
 @property (nonatomic) CGFloat offsety;
-@property (nonatomic) CGFloat midPointx;
-@property (nonatomic) CGFloat midPointy;
-
+@property (nonatomic,assign) CGPoint midPoint;
 
 // pinch for scaling
 - (void)pinch:(UIPinchGestureRecognizer *)gesture;

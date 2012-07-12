@@ -17,6 +17,12 @@
 		F28736B415AE7B0E008EC35D /* GraphingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736B315AE7B0E008EC35D /* GraphingViewController.m */; };
 		F28736BC15AE7BBF008EC35D /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736BB15AE7BBF008EC35D /* AxesDrawer.m */; };
 		F28736BF15AE7CA2008EC35D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = F28736BE15AE7CA2008EC35D /* GraphView.m */; };
+		F28736CA15AEA6A1008EC35D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F28736C415AEA6A1008EC35D /* Icon-72.png */; };
+		F28736CB15AEA6A1008EC35D /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F28736C515AEA6A1008EC35D /* Icon-Small-50.png */; };
+		F28736CC15AEA6A1008EC35D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = F28736C615AEA6A1008EC35D /* Icon-Small.png */; };
+		F28736CD15AEA6A1008EC35D /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28736C715AEA6A1008EC35D /* Icon-Small@2x.png */; };
+		F28736CE15AEA6A1008EC35D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F28736C815AEA6A1008EC35D /* Icon.png */; };
+		F28736CF15AEA6A1008EC35D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28736C915AEA6A1008EC35D /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,13 @@
 		F28736BB15AE7BBF008EC35D /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		F28736BD15AE7CA2008EC35D /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
 		F28736BE15AE7CA2008EC35D /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		F28736C415AEA6A1008EC35D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
+		F28736C515AEA6A1008EC35D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "../Icon-Small-50.png"; sourceTree = "<group>"; };
+		F28736C615AEA6A1008EC35D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "../Icon-Small.png"; sourceTree = "<group>"; };
+		F28736C715AEA6A1008EC35D /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "../Icon-Small@2x.png"; sourceTree = "<group>"; };
+		F28736C815AEA6A1008EC35D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		F28736C915AEA6A1008EC35D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		F28736D615AEA854008EC35D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +113,13 @@
 		F28736A415AE7B0E008EC35D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F28736C415AEA6A1008EC35D /* Icon-72.png */,
+				F28736C515AEA6A1008EC35D /* Icon-Small-50.png */,
+				F28736C615AEA6A1008EC35D /* Icon-Small.png */,
+				F28736D615AEA854008EC35D /* iTunesArtwork */,
+				F28736C715AEA6A1008EC35D /* Icon-Small@2x.png */,
+				F28736C815AEA6A1008EC35D /* Icon.png */,
+				F28736C915AEA6A1008EC35D /* Icon@2x.png */,
 				F28736A515AE7B0E008EC35D /* Graphing-Info.plist */,
 				F28736A615AE7B0E008EC35D /* InfoPlist.strings */,
 				F28736A915AE7B0E008EC35D /* main.m */,
@@ -162,6 +182,12 @@
 			files = (
 				F28736A815AE7B0E008EC35D /* InfoPlist.strings in Resources */,
 				F28736B115AE7B0E008EC35D /* MainStoryboard.storyboard in Resources */,
+				F28736CA15AEA6A1008EC35D /* Icon-72.png in Resources */,
+				F28736CB15AEA6A1008EC35D /* Icon-Small-50.png in Resources */,
+				F28736CC15AEA6A1008EC35D /* Icon-Small.png in Resources */,
+				F28736CD15AEA6A1008EC35D /* Icon-Small@2x.png in Resources */,
+				F28736CE15AEA6A1008EC35D /* Icon.png in Resources */,
+				F28736CF15AEA6A1008EC35D /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +314,7 @@
 				F28736B915AE7B0E008EC35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

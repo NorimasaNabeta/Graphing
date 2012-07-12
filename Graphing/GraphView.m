@@ -9,8 +9,11 @@
 #import "AxesDrawer.h"
 @implementation GraphView
 @synthesize scale=_scale;
+
 @synthesize offsetx=_offsetx;
 @synthesize offsety=_offsety;
+@synthesize midPointx=_midPointx;
+@synthesize midPointy=_midPointy;
 
 #define DEFAULT_SCALE 0.90
 
@@ -29,34 +32,20 @@
     }
 }
 
-- (CGFloat) offsetx
+
+- (void)tap:(UITapGestureRecognizer *)gesture
 {
-    if (! _offsetx) {
-        _offsetx=DEFAULT_SCALE;
-    }
-    return _offsetx;
-}
-- (void)setOffsetx:(CGFloat)offsetx
-{
-    if (offsetx != _offsetx) {
-        _offsetx = offsetx;
+    if ((gesture.state == UIGestureRecognizerStateChanged) ||
+        (gesture.state == UIGestureRecognizerStateEnded)) {
+        CGPoint tapPoint = [gesture locationInView:gesture.view];
+        //NSLog(@"%g, %g", tapPoint.x, tapPoint.y);
+        self.midPointx=tapPoint.x;
+        self.midPointy=tapPoint.y;
         [self setNeedsDisplay];
     }
 }
-- (CGFloat) offsety
-{
-    if (! _offsety) {
-        _offsety=DEFAULT_SCALE;
-    }
-    return _offsety;
-}
-- (void)setOffsety:(CGFloat)offsety
-{
-    if (offsety != _offsety) {
-        _offsety = offsety;
-        [self setNeedsDisplay];
-    }
-}
+
+
 - (void)pinch:(UIPinchGestureRecognizer *)gesture
 {
     if ((gesture.state == UIGestureRecognizerStateChanged) ||
@@ -74,6 +63,7 @@
         // NSLog(@"%g, %g", translation.x, translation.y);
         self.offsetx -= -translation.x / 2;
         self.offsety -= -translation.y / 2;
+        [self setNeedsDisplay];
         
         // reset
         [gesture setTranslation:CGPointZero inView:self];
@@ -83,6 +73,8 @@
 - (void)setup
 {
     self.contentMode = UIViewContentModeRedraw; // if our bounds changes, redraw ourselves
+    self.midPointx = self.bounds.origin.x + self.bounds.size.width/2;
+    self.midPointy = self.bounds.origin.y + self.bounds.size.height/2;
 }
 
 - (void)awakeFromNib
@@ -103,14 +95,13 @@
  - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    
-    CGPoint midPoint; // center of our bounds in our coordinate system
+    CGPoint midPoint=CGPointMake(self.midPointx, self.midPointy);
+
     CGRect baseRect = self.bounds;
     baseRect.origin.x += self.offsetx;
     baseRect.origin.y += self.offsety;
-    midPoint.x = self.bounds.origin.x + self.bounds.size.width/2;
-    midPoint.y = self.bounds.origin.y + self.bounds.size.height/2;
 
+    // BoundaryRect
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
     CGContextAddRect(context, baseRect);

@@ -9,9 +9,7 @@
 #import "AxesDrawer.h"
 @implementation GraphView
 @synthesize scale=_scale;
-
-@synthesize offsetx=_offsetx;
-@synthesize offsety=_offsety;
+@synthesize offOrigin=_offOrigin;
 @synthesize midPoint=_midPoint;
 
 #define DEFAULT_SCALE 0.90
@@ -59,8 +57,8 @@
         (gesture.state == UIGestureRecognizerStateEnded)) {
         CGPoint translation = [gesture translationInView:self];
         // NSLog(@"%g, %g", translation.x, translation.y);
-        self.offsetx -= -translation.x / 2;
-        self.offsety -= -translation.y / 2;
+        self.offOrigin = CGPointMake((self.offOrigin.x + translation.x/2), 
+                                     (self.offOrigin.y + translation.y/2));
         [self setNeedsDisplay];
         
         // reset
@@ -71,6 +69,7 @@
 - (void)setup
 {
     self.contentMode = UIViewContentModeRedraw; // if our bounds changes, redraw ourselves
+    self.offOrigin=CGPointZero;
     self.midPoint = CGPointMake((self.bounds.origin.x + self.bounds.size.width/2),
                                 (self.bounds.origin.y + self.bounds.size.height/2));
 }
@@ -94,8 +93,8 @@
 {
     // Drawing code
     CGRect baseRect = self.bounds;
-    baseRect.origin.x += self.offsetx;
-    baseRect.origin.y += self.offsety;
+    baseRect.origin.x += self.offOrigin.x;
+    baseRect.origin.y += self.offOrigin.y;
 
     // BoundaryRect
     CGContextRef context = UIGraphicsGetCurrentContext();

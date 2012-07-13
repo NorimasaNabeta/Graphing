@@ -21,13 +21,15 @@
 // http://stackoverflow.com/questions/2971842/cgrect-var-as-property-value
 // CGRect is a struct, not an NSObject.
 //
-@property (nonatomic) CGFloat offsetx;
-@property (nonatomic) CGFloat offsety;
+@property (nonatomic,assign) CGPoint offOrigin;
 @property (nonatomic,assign) CGPoint midPoint;
 
 // pinch for scaling
 - (void)pinch:(UIPinchGestureRecognizer *)gesture;
 // pan for moving graph
 - (void)pan:(UIPanGestureRecognizer *)gesture;
+// tap(Triple-tap) for moving the origin of the graph
+- (void)pan:(UIPanGestureRecognizer *)gesture;
+
 
 @end

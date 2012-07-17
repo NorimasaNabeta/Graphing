@@ -95,7 +95,7 @@
     CGRect baseRect = self.bounds;
     baseRect.origin.x += self.offOrigin.x;
     baseRect.origin.y += self.offOrigin.y;
-
+    
     // BoundaryRect
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
@@ -103,7 +103,9 @@
     // CGContextFillPath(context);    
     CGContextStrokePath(context); 
     
-    [AxesDrawer drawAxesInRect:baseRect originAtPoint:self.midPoint scale:self.scale];
+    //[AxesDrawer drawAxesInRect:baseRect originAtPoint:self.midPoint scale:self.scale];
+    CGPoint cookedPoint = CGPointMake(self.midPoint.x + self.offOrigin.x, self.midPoint.y + self.offOrigin.y);
+    [AxesDrawer drawAxesInRect:baseRect originAtPoint:cookedPoint scale:self.scale];
 
 }
 

@@ -9,8 +9,8 @@
 #import "AxesDrawer.h"
 @implementation GraphView
 @synthesize scale=_scale;
-@synthesize offOrigin=_offOrigin;
-@synthesize midPoint=_midPoint;
+@synthesize origin=_origin;
+@synthesize rectGraph=_rectGraph;
 
 #define DEFAULT_SCALE 0.90
 
@@ -26,9 +26,28 @@
     if (scale != _scale) {
         _scale = scale;
         [self setNeedsDisplay]; // any time our scale changes, call for redraw
+
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setDouble:self.scale forKey:@"scale"];
+        [ud synchronize];
     }
 }
 
+- (void) setOrigin:(CGPoint)origin
+{
+    if((_origin.x != origin.x) || (_origin.y != origin.y)){
+        _origin=origin;
+        [self setNeedsDisplay]; // any time our scale changes, call for redraw        
+
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        NSDictionary *origin = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [NSNumber numberWithDouble:self.origin.x], @"x", 
+                                [NSNumber numberWithDouble:self.origin.y], @"y", 
+                                nil ];
+        [ud setObject:origin forKey:@"origin"];
+        [ud synchronize];
+    }
+}
 
 - (void)tap:(UITapGestureRecognizer *)gesture
 {
@@ -36,8 +55,7 @@
         (gesture.state == UIGestureRecognizerStateEnded)) {
         CGPoint tapPoint = [gesture locationInView:gesture.view];
         //NSLog(@"%g, %g", tapPoint.x, tapPoint.y);
-        self.midPoint=tapPoint;
-        [self setNeedsDisplay];
+        self.origin=tapPoint;
     }
 }
 
@@ -57,9 +75,9 @@
         (gesture.state == UIGestureRecognizerStateEnded)) {
         CGPoint translation = [gesture translationInView:self];
         // NSLog(@"%g, %g", translation.x, translation.y);
-        self.offOrigin = CGPointMake((self.offOrigin.x + translation.x/2), 
-                                     (self.offOrigin.y + translation.y/2));
-        [self setNeedsDisplay];
+        self.rectGraph= CGRectMake((self.rectGraph.origin.x+translation.x/2), (self.rectGraph.origin.y+translation.y/2),
+                                   self.rectGraph.size.width, self.rectGraph.size.height);
+        self.origin = CGPointMake((self.origin.x + translation.x/2), (self.origin.y + translation.y/2));
         
         // reset
         [gesture setTranslation:CGPointZero inView:self];
@@ -68,10 +86,24 @@
 
 - (void)setup
 {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    double scaleVal = [ud doubleForKey:@"scale"];
+    if (scaleVal) {
+        // NSLog(@"[scale] Set defauls value : %g", scaleVal);
+        self.scale = scaleVal;
+    }
+    NSDictionary *dicOrigin = [ud objectForKey:@"origin"];
+    if (dicOrigin) {
+        self.origin = CGPointMake([[dicOrigin objectForKey:@"x"] doubleValue], [[dicOrigin objectForKey:@"y"] doubleValue]);
+        // NSLog(@"[origin] Set defauls value : (%g,%g)", pnt.x, pnt.y);
+    }
+    else {
+        //self.origin = CGPointZero;        
+        self.origin = CGPointMake((self.bounds.origin.x + self.bounds.size.width/2),
+                                  (self.bounds.origin.y + self.bounds.size.height/2));
+    }   
+    self.rectGraph = self.bounds;
     self.contentMode = UIViewContentModeRedraw; // if our bounds changes, redraw ourselves
-    self.offOrigin=CGPointZero;
-    self.midPoint = CGPointMake((self.bounds.origin.x + self.bounds.size.width/2),
-                                (self.bounds.origin.y + self.bounds.size.height/2));
 }
 
 - (void)awakeFromNib
@@ -92,20 +124,15 @@
  - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    CGRect baseRect = self.bounds;
-    baseRect.origin.x += self.offOrigin.x;
-    baseRect.origin.y += self.offOrigin.y;
     
     // BoundaryRect
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
-    CGContextAddRect(context, baseRect);
+    CGContextAddRect(context, self.rectGraph);
     // CGContextFillPath(context);    
     CGContextStrokePath(context); 
-    
-    //[AxesDrawer drawAxesInRect:baseRect originAtPoint:self.midPoint scale:self.scale];
-    CGPoint cookedPoint = CGPointMake(self.midPoint.x + self.offOrigin.x, self.midPoint.y + self.offOrigin.y);
-    [AxesDrawer drawAxesInRect:baseRect originAtPoint:cookedPoint scale:self.scale];
+
+    [AxesDrawer drawAxesInRect:self.rectGraph originAtPoint:self.origin scale:self.scale];
 
 }
 

@@ -21,8 +21,8 @@
 // http://stackoverflow.com/questions/2971842/cgrect-var-as-property-value
 // CGRect is a struct, not an NSObject.
 //
-@property (nonatomic,assign) CGPoint offOrigin;
-@property (nonatomic,assign) CGPoint midPoint;
+@property (nonatomic,assign) CGPoint origin;
+@property (nonatomic,assign) CGRect rectGraph;
 
 // pinch for scaling
 - (void)pinch:(UIPinchGestureRecognizer *)gesture;

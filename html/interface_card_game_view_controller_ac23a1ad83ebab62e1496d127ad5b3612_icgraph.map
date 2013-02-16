@@ -1,7 +1,0 @@
-<map id="&#45;[CardGameViewController addSelectedWordAttributes:]" name="&#45;[CardGameViewController addSelectedWordAttributes:]">
-<area shape="rect" id="node2" href="$interface_card_game_view_controller.html#add1c43bd36b443306f93b5b0de454045" title="&#45;[CardGameViewController\l underline]" alt="" coords="248,5,429,49"/>
-<area shape="rect" id="node3" href="$interface_card_game_view_controller.html#aef149d9e4a83a42d7c01c24b0ea5fd20" title="&#45;[CardGameViewController\l unUnderline]" alt="" coords="248,73,429,117"/>
-<area shape="rect" id="node4" href="$interface_card_game_view_controller.html#adfc09cdc80087ca88a431341076d7142" title="&#45;[CardGameViewController\l changeFontSize]" alt="" coords="248,141,429,185"/>
-<area shape="rect" id="node5" href="$interface_card_game_view_controller.html#a231b26446fa9c84439cf5fadaa6bb50c" title="&#45;[CardGameViewController\l changeColor:]" alt="" coords="248,209,429,253"/>
-<area shape="rect" id="node6" href="$interface_card_game_view_controller.html#a9975dd4e30d63bf2a9124b0962c7493a" title="&#45;[CardGameViewController\l changeFontStyle:]" alt="" coords="248,277,429,321"/>
-</map>

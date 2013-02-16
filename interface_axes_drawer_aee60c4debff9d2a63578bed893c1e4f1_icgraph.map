@@ -1,0 +1,5 @@
+<map id="+[AxesDrawer drawString:atPoint:withAnchor:]" name="+[AxesDrawer drawString:atPoint:withAnchor:]">
+<area shape="rect" id="node2" href="$interface_axes_drawer.html#a1e5ef8cbbcfa8024dc71c3c1b6a31935" title="+[AxesDrawer drawHashMarks\lInRect:originAtPoint:scale:]" alt="" coords="227,5,432,49"/>
+<area shape="rect" id="node3" href="$interface_axes_drawer.html#ac3f4c16ed8823cdfde18b890f7e4b26d" title="+[AxesDrawer drawAxesInRect\l:originAtPoint:scale:]" alt="" coords="481,5,687,49"/>
+<area shape="rect" id="node4" href="$interface_graph_view.html#ac79db7613856211dc729807792f1728a" title="&#45;[GraphView drawRect:]" alt="" coords="736,13,899,41"/>
+</map>
